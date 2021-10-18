@@ -1,11 +1,13 @@
 .button {
-    height: 40px;
+    height: 30px;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(223, 217, 217);
     outline: none;
     cursor: pointer;
     font-size: 16px;
     font-weight: 500;
+    background-color: rgb(255, 255, 255);
+    z-index: 1;
 }
 
 .icon-button {
@@ -13,8 +15,18 @@
     border: none;
     cursor: pointer;
     background: transparent;
+    padding: 0;
+    margin: 6px;
+    z-index: 1;
+    background-color: chartreuse;
 }
 
+.fas {
+    z-index: -1;
+}
+.fa-chevron-right {
+    z-index: -1;
+}
 .modal {
     position: fixed;
     display: flex;
@@ -22,7 +34,7 @@
     align-items: center;
 
     &__content {
-        background: #fff;
+        background: rgb(182, 18, 18);
         padding: 16px;
         border: 1px solid #ccc;
         border-radius: 8px;
@@ -35,7 +47,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #cccccc45;
+    background-color: #a8a8a8be;
     z-index: 10;
 }
 

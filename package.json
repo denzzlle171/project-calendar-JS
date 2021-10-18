@@ -1,7 +1,7 @@
 {
   "name": "gromcode-calendar-js",
   "version": "1.0.0",
-  "description": "",
+  "description": "### To start: ### 1. clone the repo 2. install LTS [NodeJS](https://nodejs.org/en/) 3. run `npm install` to to use eslint in the project",
   "scripts": {
     "lint": "npm run lint"
   },
@@ -19,8 +19,9 @@
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-config-prettier": "^6.10.1",
-    "eslint-plugin-import": "^2.20.1"
-  }
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.24.2"
+  },
+  "main": ".eslintrc.js"
 }

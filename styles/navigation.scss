@@ -1,1 +1,24 @@
 // стили навигации
+.header {
+    // background-color: fuchsia;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    padding: 20px 40px;
+}
+
+.navigation {
+    display: block;
+
+    &__today-btn {
+        margin-left: 30px;
+        margin-right: 30px;
+        width: 80px;
+        border-radius: 4px;
+        padding: 0px;
+    }
+
+    &__displayed-month {
+        margin-left: 30px;
+    }
+}

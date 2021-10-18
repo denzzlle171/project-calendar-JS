@@ -1,0 +1,162 @@
+.page {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.button {
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid #dfd9d9;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: white;
+  z-index: 1;
+}
+
+.icon-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  padding: 0;
+  margin: 6px;
+  z-index: 1;
+  background-color: chartreuse;
+}
+
+.fas {
+  z-index: -1;
+}
+
+.fa-chevron-right {
+  z-index: -1;
+}
+
+.modal {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal__content {
+  background: #b61212;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #a8a8a8be;
+  z-index: 10;
+}
+
+.popup__content {
+  position: absolute;
+  background: #fff;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+.header {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  padding: 20px 40px;
+}
+
+.navigation {
+  display: block;
+}
+.navigation__today-btn {
+  margin-left: 30px;
+  margin-right: 30px;
+  width: 80px;
+  border-radius: 4px;
+  padding: 0px;
+}
+.navigation__displayed-month {
+  margin-left: 30px;
+}
+
+.calendar {
+  margin-top: 70px;
+  overflow-y: auto;
+}
+.calendar__header {
+  display: flex;
+  margin-left: 70px;
+  background-color: burlywood;
+  position: fixed;
+}
+.calendar__day-label {
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+  height: 60px;
+  border: 1px solid black;
+  align-items: center;
+}
+.calendar__day-label__day-name {
+  display: block;
+}
+.calendar__day-label__day-number {
+  display: block;
+}
+.calendar__body {
+  display: flex;
+}
+.calendar__week-container {
+  margin-top: 60px;
+  display: flex;
+}
+.calendar__time-scale {
+  width: 70px;
+  background-color: violet;
+}
+.calendar__week {
+  display: flex;
+  background-color: cadetblue;
+}
+.calendar__time-slot {
+  border: 1px solid black;
+  width: 120px;
+  height: 60px;
+}
+.calendar .time-slot {
+  width: 70px;
+  height: 60px;
+  border: 1px solid black;
+}
+
+.create-event-btn {
+  width: 100px;
+  border-radius: 48px;
+  border-radius: transparent;
+  box-shadow: 0px 5px 3px -4px #474747;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+}
+
+/*# sourceMappingURL=styles.css.map */
