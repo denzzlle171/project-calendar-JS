@@ -16,15 +16,15 @@ let storage = {
       id: 0.2520027086455533,
       title: 'Title',
       description: 'Some description',
-      start: new Date('2021-11-07T08:10:00.000Z'),
-      end: new Date('2021-11-07T09:30:00.000Z'),
+      start: new Date('2021-10-19T08:00:00.000Z'),
+      end: new Date('2021-10-19T09:30:00.000Z'),
     },
     {
       id: 0.952002999999993,
       title: 'call my friend',
       description: 'call to HarisonFord',
-      start: new Date('2021-11-03T03:10:00.000Z'),
-      end: new Date('2021-11-03T05:30:00.000Z'),
+      start: new Date('2021-10-25T03:10:00.000Z'),
+      end: new Date('2021-10-25T05:30:00.000Z'),
     },
 
     {
@@ -63,3 +63,5 @@ const eventExample = {
   start: new Date('2020-03-17T01:10:00.000Z'),
   end: new Date('2020-03-17T04:30:00.000Z'),
 };
+
+// console.log(new Date('2020-03-17T01:10:00.000Z').getDate());

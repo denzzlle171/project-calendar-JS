@@ -6,38 +6,51 @@ const weekElem = document.querySelector('.calendar__week');
 const deleteEventBtn = document.querySelector('.delete-event-btn');
 
 function handleEventClick(event) {
-    // если произошел клик по событию, то нужно паказать попап с кнопкой удаления
-    // установите eventIdToDelete с id события в storage
+  // если произошел клик по событию, то нужно паказать попап с кнопкой удаления
+  // установите eventIdToDelete с id события в storage
 }
 
 function removeEventsFromCalendar() {
-    // ф-ция для удаления всех событий с календаря
+  // ф-ция для удаления всех событий с календаря
 }
 
-const createEventElement = event => {
-    // ф-ция создает DOM элемент события
-    // событие должно позиционироваться абсолютно внутри нужной ячейки времени внутри дня
-    // нужно добавить id события в дата атрибут
-    // здесь для создания DOM элемента события используйте document.createElement
+const createEventElement = (event) => {
+  // ф-ция создает DOM элемент события
+  // событие должно позиционироваться абсолютно внутри нужной ячейки времени внутри дня
+  // нужно добавить id события в дата атрибут
+  // здесь для создания DOM элемента события используйте document.createElement
 };
 
 export const renderEvents = () => {
-    // достаем из storage все события и дату понедельника отображаемой недели
-    // фильтруем события, оставляем только те, что входят в текущую неделю
-    // создаем для них DOM элементы с помощью createEventElement
-    // для каждого события находим на странице временную ячейку (.calendar__time-slot)
-    // и вставляем туда событие
-    // каждый день и временная ячейка должно содержать дата атрибуты, по которым можно будет найти нужную временную ячейку для события
-    // не забудьте удалить с календаря старые события перед добавлением новых
-};
+  // достаем из storage все события и дату понедельника отображаемой недели
+  console.log(getItem('displayedWeekStart'));
+  console.log(getItem('events'));
 
+  // фильтруем события, оставляем только те, что входят в текущую неделю
+  getItem('events').filter((element) => {
+    // if (element)
+    const daysOfEvent = element.start.getDate();
+  });
+  // создаем для них DOM элементы с помощью createEventElement
+  // для каждого события находим на странице временную ячейку (.calendar__time-slot)
+  // и вставляем туда событие
+  // каждый день и временная ячейка должно содержать дата атрибуты, по которым можно будет найти нужную временную ячейку для события
+  // не забудьте удалить с календаря старые события перед добавлением новых
+};
+renderEvents();
+//
 function onDeleteEvent() {
-    // достаем из storage массив событий и eventIdToDelete
-    // удаляем из массива нужное событие и записываем в storage новый массив
-    // закрыть попап
-    // перерисовать события на странице в соответствии с новым списком событий в storage (renderEvents)
+  // достаем из storage массив событий и eventIdToDelete
+  // удаляем из массива нужное событие и записываем в storage новый массив
+  // закрыть попап
+  // перерисовать события на странице в соответствии с новым списком событий в storage (renderEvents)
 }
 
 deleteEventBtn.addEventListener('click', onDeleteEvent);
 
 weekElem.addEventListener('click', handleEventClick);
+
+// `<div data-event-id="${0000000000}" class="event" style="${top:10px; height: 120 px}">
+//   <div class="event__title">${Title}</div>
+//   <div class="event__time"> ${3:10} - ${6:30}</div>
+// </div>`

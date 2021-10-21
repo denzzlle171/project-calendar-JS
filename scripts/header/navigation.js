@@ -3,13 +3,9 @@ import { renderWeek } from '../calendar/calendar.js';
 import { renderHeader } from '../calendar/header.js';
 import { getStartOfWeek, getDisplayedMonth } from '../common/time.utils.js';
 
-// const navElem = document.querySelector('.navigation');
 const today = document.querySelector('.navigation__today-btn');
 const forward = document.querySelector('.button_next');
 const backward = document.querySelector('.button_prev');
-// const displayedMonthElem = document.querySelector(
-//   '.navigation__displayed-month'
-// );
 
 function renderCurrentMonth() {
   // отрисовать месяц, к которому относиться текущая неделя (getDisplayedMonth)
