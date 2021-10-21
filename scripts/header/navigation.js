@@ -3,10 +3,13 @@ import { renderWeek } from '../calendar/calendar.js';
 import { renderHeader } from '../calendar/header.js';
 import { getStartOfWeek, getDisplayedMonth } from '../common/time.utils.js';
 
-const navElem = document.querySelector('.navigation');
-const displayedMonthElem = document.querySelector(
-  '.navigation__displayed-month'
-);
+// const navElem = document.querySelector('.navigation');
+const today = document.querySelector('.navigation__today-btn');
+const forward = document.querySelector('.button_next');
+const backward = document.querySelector('.button_prev');
+// const displayedMonthElem = document.querySelector(
+//   '.navigation__displayed-month'
+// );
 
 function renderCurrentMonth() {
   // отрисовать месяц, к которому относиться текущая неделя (getDisplayedMonth)
@@ -16,42 +19,39 @@ function renderCurrentMonth() {
   // displeyMonth.append(corentMomth);
   displeyMonth.innerText = corentMomth;
 }
-
-const onChangeWeek = (event) => {
-  const carentMon = getItem('displayedWeekStart').getDate();
-  const isNavbtn = event.target.classList.contains('fas');
-  if (!isNavbtn) {
-    return;
-  }
-
-  const navWeekBtn = event.target.closest('.icon-button');
-  // console.log(navWeekBtn);
-
-  if (navWeekBtn.dataset.direction === 'next') {
-    // next week
-    const nextMon = getItem('displayedWeekStart').setDate(carentMon + 7);
-    setItem('displayedWeekStart', new Date(nextMon));
-  }
-  if (navWeekBtn.dataset.direction === 'prev') {
-    // prew week
-    const prewMon = getItem('displayedWeekStart').setDate(carentMon - 7);
-    setItem('displayedWeekStart', new Date(prewMon));
-  }
-
+const reRender = () => {
   renderHeader();
   renderWeek();
   renderCurrentMonth();
-  // при переключении недели обновите displayedWeekStart в storage
-  // и перерисуйте все необходимые элементы страницы (renderHeader, renderWeek, renderCurrentMonth)
+};
+// при переключении недели обновите displayedWeekStart в storage
+// и перерисуйте все необходимые элементы страницы (renderHeader, renderWeek, renderCurrentMonth)
+
+const forwardWeek = () => {
+  const nextMon = getItem('displayedWeekStart').setDate(
+    getItem('displayedWeekStart').getDate() + 7
+  );
+  setItem('displayedWeekStart', new Date(nextMon));
+  reRender();
 };
 
-// if (navWeekBtn.dataset.direction === 'today') {
-//   // сurent week
-//   getItem('displayedWeekStart', getStartOfWeek(new Date()));
-// }
+const backwardWeek = () => {
+  const prewMon = getItem('displayedWeekStart').setDate(
+    getItem('displayedWeekStart').getDate() - 7
+  );
+  setItem('displayedWeekStart', new Date(prewMon));
+  reRender();
+};
+
+const onToday = (event) => {
+  setItem('displayedWeekStart', getStartOfWeek(new Date()));
+  reRender();
+};
 
 export const initNavigation = () => {
   renderCurrentMonth();
 
-  navElem.addEventListener('click', onChangeWeek);
+  today.addEventListener('click', onToday);
+  forward.addEventListener('click', forwardWeek);
+  backward.addEventListener('click', backwardWeek);
 };

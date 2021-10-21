@@ -15,7 +15,6 @@
   font-size: 16px;
   font-weight: 500;
   background-color: white;
-  z-index: 1;
 }
 
 .icon-button {
@@ -25,12 +24,7 @@
   background: transparent;
   padding: 0;
   margin: 6px;
-  z-index: 1;
   background-color: chartreuse;
-}
-
-.fas {
-  z-index: -1;
 }
 
 .fa-chevron-right {
@@ -42,6 +36,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 .modal__content {
   background: #b61212;
@@ -57,7 +52,6 @@
   width: 100vw;
   height: 100vh;
   background-color: #a8a8a8be;
-  z-index: 10;
 }
 
 .popup__content {
