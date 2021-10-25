@@ -23,21 +23,32 @@ const createEventElement = (event) => {
 
 export const renderEvents = () => {
   // достаем из storage все события и дату понедельника отображаемой недели
-  console.log(getItem('displayedWeekStart'));
-  console.log(getItem('events'));
 
+  //
+  console.log(getItem('displayedWeekStart'));
+  // console.log(getItem('events'));
+  const beginWeekDay = new Date(); // need 'displayedWeekStart'witch !=0
+  const endWeekDay = new Date(new Date().setDate(new Date().getDate() + 7)); // need shmoment
   // фильтруем события, оставляем только те, что входят в текущую неделю
-  getItem('events').filter((element) => {
-    // if (element)
-    const daysOfEvent = element.start.getDate();
+  const arrCurentWeekEv = getItem('events').filter((element) => {
+    if (element.start >= beginWeekDay && element.start < endWeekDay) {
+      return element;
+    }
   });
-  // создаем для них DOM элементы с помощью createEventElement
-  // для каждого события находим на странице временную ячейку (.calendar__time-slot)
-  // и вставляем туда событие
-  // каждый день и временная ячейка должно содержать дата атрибуты, по которым можно будет найти нужную временную ячейку для события
-  // не забудьте удалить с календаря старые события перед добавлением новых
+  console.log(arrCurentWeekEv);
+  return arrCurentWeekEv;
 };
+
 renderEvents();
+// создаем для них DOM элементы с помощью createEventElement
+// arrCurentWeekEv.map((elem) => {
+//   const blockOfevent = document.createElement('div');
+// для каждого события находим на странице временную ячейку (.calendar__time-slot)
+// и вставляем туда событие
+// каждый день и временная ячейка должно содержать дата атрибуты, по которым можно будет найти нужную временную ячейку для события
+// не забудьте удалить с календаря старые события перед добавлением новых
+// });
+// renderEvents();
 //
 function onDeleteEvent() {
   // достаем из storage массив событий и eventIdToDelete
@@ -54,3 +65,5 @@ weekElem.addEventListener('click', handleEventClick);
 //   <div class="event__title">${Title}</div>
 //   <div class="event__time"> ${3:10} - ${6:30}</div>
 // </div>`
+
+// const a = l.add('days', 7);

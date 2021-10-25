@@ -9,8 +9,8 @@ let storage = {
       id: 0.7520027086457333,
       title: 'go to banana',
       description: 'where is my mind',
-      start: new Date('2021-10-22T01:10:00.000Z'),
-      end: new Date('2021-10-22T04:30:00.000Z'),
+      start: new Date('2021-10-28T01:10:00.000Z'),
+      end: new Date('2021-10-28T04:30:00.000Z'),
     },
     {
       id: 0.2520027086455533,
@@ -38,8 +38,8 @@ let storage = {
       id: 0.77777776669993,
       title: 'sleap',
       description: 'go to bed',
-      start: new Date('2021-10-24T01:00:00.000Z'),
-      end: new Date('2021-10-24T02:00:00.000Z'),
+      start: new Date('2021-11-04T01:00:00.000Z'),
+      end: new Date('2021-11-04T02:00:00.000Z'),
     },
   ],
   // это все данные, которые вам нужно хранить для работы приложения
