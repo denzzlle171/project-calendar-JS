@@ -8,7 +8,6 @@ export const renderHeader = () => {
   // на основе displayedWeekStart из storage с помощью generateWeekRange сформируйте массив дней текущей недели
   // console.log(getItem('displayedWeekStart'));
   const daysCurentWeek = generateWeekRange(getItem('displayedWeekStart'));
-  console.log(getItem('displayedWeekStart'));
   // на основе полученного массива сформируйте разметку в виде строки - 7 дней (день недели и число в месяце)
   const daysItem = daysCurentWeek.map(
     (elem) => `<div class='calendar__day-label day-label'>

@@ -27,4 +27,5 @@ export const renderWeek = () => {
   const calendarWeek = document.querySelector('.calendar__week');
   const strDayBodyWeek = dayBodyWeek.toString().replace(/,/g, ' ');
   calendarWeek.innerHTML = strDayBodyWeek;
+  renderEvents();
 };
