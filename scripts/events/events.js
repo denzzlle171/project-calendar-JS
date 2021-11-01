@@ -67,17 +67,24 @@ export const renderEvents = () => {
     return createEventElement(elem);
   });
 
+  const nawWeek = document.querySelectorAll('.calendar__day');
+  const arrNodDay = [...nawWeek];
+
   arrElemOfEv.forEach((element) => {
-    console.log(element);
-    // const elemForEvent = document.querySelector('.calendar__time-slot');
-    // if (
-    // elemForEvent.contains.time === element.dataset.eventTtime
-    // &&
-    // elemForEvent.closest.contains.date === element.dataset.eventDate
-    //   ) {
-    //     elemForEvent.append(element);
-    //   }
-  });
+    arrNodDay.forEach((el) => {
+      if (element.dataset.eventDate === el.dataset.day) {
+        const nawTime = el.querySelectorAll('.calendar__time-slot');
+        const arrNodTime = [...nawTime];
+
+        arrNodTime.forEach((item) => {
+          if (item.dataset.time === element.dataset.eventTime) {
+            item.append(element);
+            console.log(element);
+          }
+        });
+      }
+    });
+  }, arrNodDay);
 
   // для каждого события находим на странице временную ячейку (.calendar__time-slot)
   // и вставляем туда событие
@@ -96,15 +103,10 @@ deleteEventBtn.addEventListener('click', onDeleteEvent);
 
 weekElem.addEventListener('click', handleEventClick);
 
-// `<div data-event-id="${0000000000}" class="event" style="${top:10px; height: 120 px}">
-//   <div class="event__title">${Title}</div>
-//   <div class="event__time"> ${3:10} - ${6:30}</div>
-// </div>`
-
-const dateToId = (date) => {
-  console.log(new Date(date).getTime());
-  return new Date(date).getTime();
-};
+// const dateToId = (date) => {
+//   console.log(new Date(date).getTime());
+//   return new Date(date).getTime();
+// };
 
 // dateToId(new Date('2021-10-28T01:10:00.000Z'));
 // dateToId(new Date('2021-10-19T08:00:00.000Z'));
