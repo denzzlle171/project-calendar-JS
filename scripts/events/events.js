@@ -19,7 +19,8 @@ const createEventElement = (event) => {
   const blockOfEvent = document.createElement('div');
   const eventTitle = document.createElement('div');
   const eventTime = document.createElement('div');
-
+  //   событие должно позиционироваться абсолютно внутри нужной ячейки времени внутри дня
+  //   нужно добавить id события в дата атрибут
   blockOfEvent.classList.add('event');
   blockOfEvent.setAttribute('data-event-id', event.id);
   blockOfEvent.setAttribute('data-event-date', event.start.getDate());
@@ -39,12 +40,7 @@ const createEventElement = (event) => {
   eventTime.classList.add('event__time');
   eventTime.innerText = `${event.start.getHours()}:${event.start.getMinutes()} - ${event.end.getHours()}:${event.end.getMinutes()}`;
   blockOfEvent.append(eventTime);
-
-  // const test = document.querySelector('.create-event-btn'); // jast test
-  // test.append(blockOfEvent); // jast test
   return blockOfEvent;
-  //   событие должно позиционироваться абсолютно внутри нужной ячейки времени внутри дня
-  //   нужно добавить id события в дата атрибут
   //   здесь для создания DOM элемента события используйте document.createElement
 };
 
@@ -66,7 +62,9 @@ export const renderEvents = () => {
   const arrElemOfEv = arrCurentWeekEv.map((elem) => {
     return createEventElement(elem);
   });
-
+  // для каждого события находим на странице временную ячейку (.calendar__time-slot)
+  // и вставляем туда событие
+  // каждый день и временная ячейка должно содержать дата атрибуты, по которым можно будет найти нужную временную ячейку для события
   const nawWeek = document.querySelectorAll('.calendar__day');
   const arrNodDay = [...nawWeek];
 
@@ -79,16 +77,11 @@ export const renderEvents = () => {
         arrNodTime.forEach((item) => {
           if (item.dataset.time === element.dataset.eventTime) {
             item.append(element);
-            console.log(element);
           }
         });
       }
     });
   }, arrNodDay);
-
-  // для каждого события находим на странице временную ячейку (.calendar__time-slot)
-  // и вставляем туда событие
-  // каждый день и временная ячейка должно содержать дата атрибуты, по которым можно будет найти нужную временную ячейку для события
   // не забудьте удалить с календаря старые события перед добавлением новых
 };
 
@@ -102,6 +95,8 @@ function onDeleteEvent() {
 deleteEventBtn.addEventListener('click', onDeleteEvent);
 
 weekElem.addEventListener('click', handleEventClick);
+
+// my custom fore ID
 
 // const dateToId = (date) => {
 //   console.log(new Date(date).getTime());

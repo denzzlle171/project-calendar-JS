@@ -9,7 +9,7 @@ let storage = {
       id: 0.7520027086457333,
       title: 'go to banana',
       description: '......',
-      start: new Date('2021-11-01T01:10:00.000Z'),
+      start: new Date('2021-11-01T01:30:00.000Z'),
       end: new Date('2021-11-01T04:30:00.000Z'),
     },
     {
@@ -44,6 +44,7 @@ let storage = {
   ],
   // это все данные, которые вам нужно хранить для работы приложения
 };
+console.log();
 
 export const setItem = (key, value) => {
   // ф-ция должна устанавливать значения в объект storage
@@ -63,5 +64,4 @@ const eventExample = {
   start: new Date('2020-03-17T01:10:00.000Z'),
   end: new Date('2020-03-17T04:30:00.000Z'),
 };
-
-// console.log(new Date('2020-03-17T01:10:00.000Z').getDate());
+console.log(getItem('events'));
