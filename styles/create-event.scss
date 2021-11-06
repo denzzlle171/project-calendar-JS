@@ -5,3 +5,10 @@
     border-radius: transparent;
     box-shadow: 0px 5px 3px -4px #474747;
 }
+
+input,
+textarea {
+    outline: none;
+    border: none;
+    border: 1px solid rgb(163, 165, 167);
+}

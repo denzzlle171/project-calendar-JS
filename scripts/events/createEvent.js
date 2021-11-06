@@ -32,14 +32,13 @@ function onCreateEvent(event) {
     id: new Date().getTime(), // now time to Timestam
     title: title.value,
     description: description.value,
-    start: getDateTime(date.value, start.value).toISOString(),
-    end: getDateTime(date.value, end.value).toISOString(),
+    start: new Date(getDateTime(date.value, start.value).toISOString()),
+    end: new Date(getDateTime(date.value, end.value).toISOString()),
   };
-
-  console.log(valueEvent.start);
-  setItem('events', valueEvent);
+  setItem('events', getItem('events').push(valueEvent));
 
   console.log(getItem('events'));
+
   renderEvents();
   // полученное событие добавляем в массив событий, что хранится в storage
   // закрываем форму
