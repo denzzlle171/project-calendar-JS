@@ -12,6 +12,7 @@ function handleEventClick(event) {
 
 function removeEventsFromCalendar() {
   // ф-ция для удаления всех событий с календаря
+  setItem('events', []);
 }
 
 const createEventElement = (event) => {
@@ -62,6 +63,9 @@ export const renderEvents = () => {
   const arrElemOfEv = arrCurentWeekEv.map((elem) => {
     return createEventElement(elem);
   });
+
+  removeEventsFromCalendar(); // delete old events
+
   // для каждого события находим на странице временную ячейку (.calendar__time-slot)
   // и вставляем туда событие
   // каждый день и временная ячейка должно содержать дата атрибуты, по которым можно будет найти нужную временную ячейку для события
@@ -95,13 +99,3 @@ function onDeleteEvent() {
 deleteEventBtn.addEventListener('click', onDeleteEvent);
 
 weekElem.addEventListener('click', handleEventClick);
-
-// my custom fore ID
-
-// const dateToId = (date) => {
-//   console.log(new Date(date).getTime());
-//   return new Date(date).getTime();
-// };
-
-// dateToId(new Date('2021-10-28T01:10:00.000Z'));
-// dateToId(new Date('2021-10-19T08:00:00.000Z'));

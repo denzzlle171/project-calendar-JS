@@ -13,4 +13,4 @@ const closeEvBtn = document.querySelector('.create-event__close-btn');
 export const closeModal = () => {
   modalElem.classList.toggle('hidden');
 };
-closeEvBtn.addEventListener('click', closeModal);
+// closeEvBtn.addEventListener('click', closeModal);

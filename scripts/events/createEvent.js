@@ -9,10 +9,13 @@ const submitBtn = document.querySelector('.event-form__submit-btn');
 
 function clearEventForm() {
   // ф-ция должна очистить поля формы от значений
+  eventFormElem.reset();
 }
 
 function onCloseEventForm() {
   // здесь нужно закрыть модальное окно и очистить форму
+  closeModal();
+  clearEventForm();
 }
 
 function onCreateEvent(event) {
@@ -35,17 +38,21 @@ function onCreateEvent(event) {
     start: new Date(getDateTime(date.value, start.value).toISOString()),
     end: new Date(getDateTime(date.value, end.value).toISOString()),
   };
-  setItem('events', getItem('events').push(valueEvent));
-
+  const events = getItem('events');
+  events.push(valueEvent);
+  setItem('events', events);
   console.log(getItem('events'));
-
   renderEvents();
+  onCloseEventForm();
   // полученное событие добавляем в массив событий, что хранится в storage
   // закрываем форму
   // и запускаем перерисовку событий с помощью renderEvents
+  // onCloseEventForm();
 }
 
 submitBtn.addEventListener('click', onCreateEvent);
+
+closeEventFormBtn.addEventListener('click', onCloseEventForm);
 
 export function initEventForm() {
   // подпишитесь на сабмит формы и на закрытие формы

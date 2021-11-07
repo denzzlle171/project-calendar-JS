@@ -6,7 +6,6 @@ import { createNumbersArray } from '../common/createNumbersArray.js';
 const generateDay = () => {
   // функция должна сгенерировать и вернуть разметку дня в виде строки
   // разметка состоит из 24 часовых временных слотов (.calendar__time-slot)
-
   const daysRangeArr = createNumbersArray(0, 24).map(
     (element) => `<div class='calendar__time-slot' data-time=${element}></div>`
   );
