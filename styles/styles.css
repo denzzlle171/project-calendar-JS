@@ -131,13 +131,14 @@
   position: fixed;
 }
 .calendar__day-label {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-width: 120px;
   height: 60px;
   border: 1px solid black;
   align-items: center;
-  z-index: 3;
+  z-index: 1;
 }
 .calendar__day-label__day-name {
   display: block;
@@ -161,6 +162,7 @@
   background-color: cadetblue;
 }
 .calendar__time-slot {
+  position: relative;
   border: 1px solid black;
   width: 120px;
   height: 60px;
@@ -188,11 +190,10 @@ textarea {
 
 .event {
   color: white;
-  position: relative;
+  position: absolute;
   display: block;
   background-color: #0099ff;
   border-radius: 4px;
-  z-index: 1;
 }
 
 * {

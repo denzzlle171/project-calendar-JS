@@ -6,10 +6,14 @@ const weekElem = document.querySelector('.calendar__week');
 const deleteEventBtn = document.querySelector('.delete-event-btn');
 
 function handleEventClick(event) {
-  console.log(event);
+  event.stopPropagation();
 
-  // openPopup(event.clientX, event.clientY);
+  if (event.target.className === 'event') {
+    const deleteId = event.target.dataset.eventId;
 
+    setItem('eventIdToDelete', deleteId);
+    openPopup(event.clientX, event.clientY);
+  }
   // если произошел клик по событию, то нужно паказать попап с кнопкой удаления
   // установите eventIdToDelete с id события в storage
 }
@@ -97,9 +101,16 @@ export const renderEvents = () => {
 
 function onDeleteEvent() {
   // достаем из storage массив событий и eventIdToDelete
+  const store = getItem('events');
+  const deletedId = getItem('eventIdToDelete');
+
   // удаляем из массива нужное событие и записываем в storage новый массив
+  const newStore = store.filter((elem) => elem.id !== +deletedId);
+  setItem('events', newStore);
   // закрыть попап
+  closePopup();
   // перерисовать события на странице в соответствии с новым списком событий в storage (renderEvents)
+  renderEvents();
 }
 
 deleteEventBtn.addEventListener('click', onDeleteEvent);

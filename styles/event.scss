@@ -1,9 +1,8 @@
 // стили отображаемого в календаре события
 .event {
     color: white;
-    position: relative;
+    position: absolute;
     display: block;
     background-color: rgb(0, 153, 255);
     border-radius: 4px;
-    z-index: 1;
 }
