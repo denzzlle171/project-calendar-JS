@@ -6,16 +6,24 @@ const weekElem = document.querySelector('.calendar__week');
 const deleteEventBtn = document.querySelector('.delete-event-btn');
 
 function handleEventClick(event) {
+  console.log(event);
+
+  // openPopup(event.clientX, event.clientY);
+
   // если произошел клик по событию, то нужно паказать попап с кнопкой удаления
   // установите eventIdToDelete с id события в storage
 }
 
 function removeEventsFromCalendar() {
   // ф-ция для удаления всех событий с календаря
-  setItem('events', []);
+  const events = document.querySelectorAll('.event');
+  events.forEach((element) => {
+    element.remove();
+  });
 }
 
 const createEventElement = (event) => {
+  removeEventsFromCalendar(); // delete old events
   // ф-ция создает DOM элемент события
   const blockOfEvent = document.createElement('div');
   const eventTitle = document.createElement('div');
@@ -63,8 +71,6 @@ export const renderEvents = () => {
   const arrElemOfEv = arrCurentWeekEv.map((elem) => {
     return createEventElement(elem);
   });
-
-  removeEventsFromCalendar(); // delete old events
 
   // для каждого события находим на странице временную ячейку (.calendar__time-slot)
   // и вставляем туда событие
