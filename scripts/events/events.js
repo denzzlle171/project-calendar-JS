@@ -6,10 +6,14 @@ const weekElem = document.querySelector('.calendar__week');
 const deleteEventBtn = document.querySelector('.delete-event-btn');
 
 function handleEventClick(event) {
-  event.stopPropagation();
+  const eventClassName = event.target.className === 'event';
+  const parentClassName = event.target.offsetParent.className === 'event';
+  console.log(event.target.offsetParent.className);
 
-  if (event.target.className === 'event') {
-    const deleteId = event.target.dataset.eventId;
+  if (eventClassName || parentClassName) {
+    const deleteId = parentClassName
+      ? event.target.offsetParent.dataset.eventId
+      : event.target.dataset.eventId;
 
     setItem('eventIdToDelete', deleteId);
     openPopup(event.clientX, event.clientY);
@@ -58,6 +62,7 @@ const createEventElement = (event) => {
 };
 
 export const renderEvents = () => {
+  removeEventsFromCalendar(); // delete old events
   // достаем из storage все события и дату понедельника отображаемой недели
   const beginWeekDay = getItem('displayedWeekStart');
   const endWeekDay = shmoment(getItem('displayedWeekStart'))

@@ -85,6 +85,7 @@
   width: 100vw;
   height: 100vh;
   background-color: #a8a8a8be;
+  z-index: 2;
 }
 
 .popup__content {
@@ -129,6 +130,7 @@
   margin-left: 70px;
   background-color: burlywood;
   position: fixed;
+  z-index: 2;
 }
 .calendar__day-label {
   position: relative;
@@ -190,10 +192,17 @@ textarea {
 
 .event {
   color: white;
+  padding: 10px;
   position: absolute;
   display: block;
   background-color: #0099ff;
   border-radius: 4px;
+  z-index: 1;
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.3);
+  width: 90%;
+}
+.event:hover {
+  cursor: pointer;
 }
 
 * {
