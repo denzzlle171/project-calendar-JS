@@ -8,7 +8,6 @@ const deleteEventBtn = document.querySelector('.delete-event-btn');
 function handleEventClick(event) {
   const eventClassName = event.target.className === 'event';
   const parentClassName = event.target.offsetParent.className === 'event';
-  console.log(event.target.offsetParent.className);
 
   if (eventClassName || parentClassName) {
     const deleteId = parentClassName

@@ -1,5 +1,6 @@
 .page {
   height: 100vh;
+  align-items: center;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -35,6 +36,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.3);
   z-index: 2;
 }
 .modal__content {
@@ -51,31 +53,13 @@
   display: flex;
   margin-left: auto;
   margin-right: 0px;
+  margin-bottom: 10px;
   border: none;
+  background-color: transparent;
 }
 .create-event__close-mod {
   display: block;
   transform: rotate(45deg);
-}
-
-.event-form {
-  display: flex;
-  flex-direction: column;
-  border: none;
-}
-.event-form__field {
-  margin-bottom: 60px;
-}
-.event-form__submit-btn {
-  display: block;
-  background: #2d76d4;
-  width: 120px;
-  height: 35px;
-  border-radius: 4px;
-  border: none;
-  display: flex;
-  margin-left: auto;
-  margin-right: 0px;
 }
 
 .overlay {
@@ -84,16 +68,24 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #a8a8a8be;
   z-index: 2;
 }
 
 .popup__content {
   position: absolute;
   background: #fff;
-  padding: 16px;
+  padding: 8px;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 4px;
+}
+.popup .delete-event-btn {
+  margin-left: 3px;
+  border: none;
+  background-color: transparent;
+}
+.popup .fa-trash {
+  color: #5f5f5f;
+  margin-right: 5px;
 }
 
 .hidden {
@@ -104,7 +96,9 @@
   position: absolute;
   display: flex;
   width: 100%;
+  max-width: 910px;
   padding: 20px 40px;
+  margin: auto;
 }
 
 .navigation {
@@ -128,7 +122,7 @@
 .calendar__header {
   display: flex;
   margin-left: 70px;
-  background-color: burlywood;
+  background-color: white;
   position: fixed;
   z-index: 2;
 }
@@ -136,17 +130,15 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 120px;
+  min-width: 130px;
   height: 60px;
-  border: 1px solid black;
+  border: none;
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(0deg, #747474 20%, transparent 30%);
+  border-image-slice: 1;
   align-items: center;
   z-index: 1;
-}
-.calendar__day-label__day-name {
-  display: block;
-}
-.calendar__day-label__day-number {
-  display: block;
 }
 .calendar__body {
   display: flex;
@@ -157,23 +149,37 @@
 }
 .calendar__time-scale {
   width: 70px;
-  background-color: #da856b;
 }
 .calendar__week {
   display: flex;
-  background-color: cadetblue;
 }
 .calendar__time-slot {
   position: relative;
   border: 1px solid black;
-  width: 120px;
+  min-width: 130px;
   height: 60px;
 }
-.calendar .time-slot {
+.calendar .day-label__day-name {
+  margin-top: 3px;
+  font-size: 14px;
+}
+.calendar .day-label__day-number {
+  font-size: 22px;
+  margin-top: 3px;
+}
+
+.time-slot {
   position: relative;
   width: 70px;
   height: 60px;
-  border: 1px solid black;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-image: linear-gradient(90deg, transparent 70%, black 100%);
+  border-image-slice: 1;
+}
+.time-slot__time {
+  position: relative;
+  top: -8px;
 }
 
 .create-event-btn {
@@ -188,6 +194,56 @@ textarea {
   outline: none;
   border: none;
   border: 1px solid #a3a5a7;
+}
+
+.event-form {
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+.event-form__field {
+  margin-bottom: 60px;
+}
+.event-form__submit-btn {
+  display: block;
+  background: #2d76d4;
+  width: 120px;
+  height: 35px;
+  border-radius: 4px;
+  border: none;
+  margin-left: auto;
+  margin-right: 0px;
+}
+.event-form__title {
+  font-size: 20px;
+  border: none;
+  border-bottom: darkblue 3px solid;
+  margin-left: 40px;
+}
+.event-form__time {
+  margin-left: 20px;
+}
+.event-form__description {
+  border: none;
+  resize: none;
+  margin-left: 20px;
+  width: 100%;
+}
+.event-form .form-description {
+  display: flex;
+}
+.event-form .form__time {
+  display: flex;
+}
+.event-form .fa-clock {
+  margin-top: 5px;
+  margin-left: 5px;
+  color: #5f5f5f;
+}
+.event-form .fa-bars {
+  margin-top: 3px;
+  margin-left: 5px;
+  color: #5f5f5f;
 }
 
 .event {
@@ -210,8 +266,9 @@ textarea {
 }
 
 body {
-  font-size: 18px;
+  font-size: 14px;
   font-family: "Roboto", sans-serif;
+  color: #5f5f5f;
 }
 
 /*# sourceMappingURL=styles.css.map */

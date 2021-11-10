@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
         integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
 </head>
 
 <body class="page">
@@ -42,14 +42,20 @@
             <div class="create-event">
                 <button class="create-event__close-btn"><span class="create-event__close-mod" >+</span></button>
                 <form class="event-form">
-                    <input type="text" name="title" placeholder="Title" class="event-form__field" />
+                    <input type="text" name="title" placeholder="Title" class="event-form__field event-form__title"/>
+<div class="form__time">
+    <i class="far fa-clock"></i>
                     <div class="event-form__time">
                         <input type="date" name="date" class="event-form__field" />
                         <input type="time" name="startTime" class="event-form__field" />
                         <span>-</span>
                         <input type="time" name="endTime" class="event-form__field" />
                     </div>
-                    <textarea name="description" placeholder="Description" class="event-form__field"></textarea>
+</div>
+                    <div class="form-description">
+                    <i class="fas fa-bars"></i>
+                    <textarea name="description" placeholder="Description" class="event-form__field event-form__description"></textarea>
+                    </div>
                     <button type="submit" class="event-form__submit-btn">Create</button>
                 </form>
             </div>
@@ -58,7 +64,7 @@
     <div class="popup hidden overlay">
         <div class="popup__overlay"></div>
         <div class="popup__content">
-            <button class="delete-event-btn">Delete</button>
+            <button class="delete-event-btn"><i class="fas fa-trash"></i> Delete</button>
         </div>
         </div>
     </div>

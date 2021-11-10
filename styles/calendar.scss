@@ -6,7 +6,7 @@
     &__header {
         display: flex;
         margin-left: 70px;
-        background-color: burlywood;
+        background-color: white;
         position: fixed;
         z-index: 2;
     }
@@ -14,18 +14,15 @@
         position: relative;
         display: flex;
         flex-direction: column;
-        min-width: 120px;
+        min-width: 130px;
         height: 60px;
-        border: 1px solid black;
+        border: none;
+        border-width: 1px;
+        border-style: solid;
+        border-image: linear-gradient(0deg, rgb(116, 116, 116) 20%, transparent 30%);
+        border-image-slice: 1;
         align-items: center;
         z-index: 1;
-
-        &__day-name {
-            display: block;
-        }
-        &__day-number {
-            display: block;
-        }
     }
     &__body {
         display: flex;
@@ -35,24 +32,25 @@
         display: flex;
     }
     &__time-scale {
-        // margin-top: 60px;
         width: 70px;
-        background-color: rgb(218, 133, 107);
     }
     &__week {
         display: flex;
-        background-color: cadetblue;
+        // background-color: cadetblue;
     }
     &__time-slot {
         position: relative;
         border: 1px solid black;
-        width: 120px;
+        min-width: 130px;
         height: 60px;
     }
-    .time-slot {
-        position: relative;
-        width: 70px;
-        height: 60px;
-        border: 1px solid black;
+
+    .day-label__day-name {
+        margin-top: 3px;
+        font-size: 14px;
+    }
+    .day-label__day-number {
+        font-size: 22px;
+        margin-top: 3px;
     }
 }

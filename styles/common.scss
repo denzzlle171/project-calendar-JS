@@ -1,3 +1,4 @@
+@import "varible.scss";
 .button {
     height: 30px;
     border-radius: 8px;
@@ -26,6 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.3);
     z-index: 2;
 
     &__content {
@@ -42,31 +44,13 @@
         display: flex;
         margin-left: auto;
         margin-right: 0px;
+        margin-bottom: 10px;
         border: none;
+        background-color: transparent;
     }
     &__close-mod {
         display: block;
         transform: rotate(45deg);
-    }
-}
-
-.event-form {
-    display: flex;
-    flex-direction: column;
-    border: none;
-    &__field {
-        margin-bottom: 60px;
-    }
-    &__submit-btn {
-        display: block;
-        background: rgb(45, 118, 212);
-        width: 120px;
-        height: 35px;
-        border-radius: 4px;
-        border: none;
-        display: flex;
-        margin-left: auto;
-        margin-right: 0px;
     }
 }
 
@@ -76,7 +60,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #a8a8a8be;
+    // background-color: #a8a8a8be;
     z-index: 2;
 }
 
@@ -84,9 +68,18 @@
     &__content {
         position: absolute;
         background: #fff;
-        padding: 16px;
+        padding: 8px;
         border: 1px solid #ccc;
-        border-radius: 8px;
+        border-radius: 4px;
+    }
+    .delete-event-btn {
+        margin-left: 3px;
+        border: none;
+        background-color: transparent;
+    }
+    .fa-trash {
+        color: $colore-icon-text;
+        margin-right: 5px;
     }
 }
 

@@ -41,7 +41,6 @@ function onCreateEvent(event) {
   const events = getItem('events');
   events.push(valueEvent);
   setItem('events', events);
-  console.log(getItem('events'));
   renderEvents();
   onCloseEventForm();
   // полученное событие добавляем в массив событий, что хранится в storage

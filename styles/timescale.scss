@@ -1,1 +1,16 @@
 // стили боковой временной шкалы
+
+.time-slot {
+    position: relative;
+    width: 70px;
+    height: 60px;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-image: linear-gradient(90deg, transparent 70%, black 100%);
+    border-image-slice: 1;
+
+    &__time {
+        position: relative;
+        top: -8px;
+    }
+}
