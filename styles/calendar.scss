@@ -1,3 +1,4 @@
+@import "varible.scss";
 // стили сетки календаря и заголовка календаря с днями недели
 
 .calendar {
@@ -19,7 +20,9 @@
         border: none;
         border-width: 1px;
         border-style: solid;
-        border-image: linear-gradient(0deg, rgb(116, 116, 116) 20%, transparent 30%);
+        border-image: linear-gradient(0deg, $colore-grid 20%, transparent 30%);
+        border-bottom: none;
+        border-right: none;
         border-image-slice: 1;
         align-items: center;
         z-index: 1;
@@ -40,7 +43,8 @@
     }
     &__time-slot {
         position: relative;
-        border: 1px solid black;
+        border-top: 1px solid $colore-grid;
+        border-left: 1px solid $colore-grid;
         min-width: 130px;
         height: 60px;
     }

@@ -1,6 +1,7 @@
 import { getItem, setItem } from '../common/storage.js';
 import shmoment from '../common/shmoment.js';
 import { openPopup, closePopup } from '../common/popup.js';
+import { formatNumbers } from '../common/createNumbersArray.js';
 
 const weekElem = document.querySelector('.calendar__week');
 const deleteEventBtn = document.querySelector('.delete-event-btn');
@@ -28,6 +29,9 @@ function removeEventsFromCalendar() {
     element.remove();
   });
 }
+// const formatNumbers = (numb) => {
+//   return numb < 10 ? '0' + numb : numb;
+// };
 
 const createEventElement = (event) => {
   removeEventsFromCalendar(); // delete old events
@@ -54,7 +58,11 @@ const createEventElement = (event) => {
   blockOfEvent.append(eventTitle);
 
   eventTime.classList.add('event__time');
-  eventTime.innerText = `${event.start.getHours()}:${event.start.getMinutes()} - ${event.end.getHours()}:${event.end.getMinutes()}`;
+  eventTime.innerText = `${formatNumbers(
+    event.start.getHours()
+  )}:${formatNumbers(event.start.getMinutes())} - ${formatNumbers(
+    event.end.getHours()
+  )}:${formatNumbers(event.end.getMinutes())}`;
   blockOfEvent.append(eventTime);
   return blockOfEvent;
   //   здесь для создания DOM элемента события используйте document.createElement

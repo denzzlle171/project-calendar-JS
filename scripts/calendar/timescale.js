@@ -1,10 +1,11 @@
 import { createNumbersArray } from '../common/createNumbersArray.js';
+import { formatNumbers } from '../common/createNumbersArray.js';
 
 export const renderTimescale = () => {
   // ф-ция должна генерировать разметку для боковой шкалы времени (24 часа)
   // bring to format 00:00
   const arrChangeNumber = createNumbersArray(0, 24).map((element) =>
-    element < 10 ? '0' + element : element
+    formatNumbers(element)
   );
   // create string
   const ArrTimeString = arrChangeNumber.map(

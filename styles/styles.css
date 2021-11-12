@@ -56,6 +56,7 @@
   margin-bottom: 10px;
   border: none;
   background-color: transparent;
+  font-size: 20px;
 }
 .create-event__close-mod {
   display: block;
@@ -110,6 +111,7 @@
   width: 80px;
   border-radius: 4px;
   padding: 0px;
+  color: #5f5f5f;
 }
 .navigation__displayed-month {
   margin-left: 30px;
@@ -136,6 +138,8 @@
   border-width: 1px;
   border-style: solid;
   border-image: linear-gradient(0deg, #747474 20%, transparent 30%);
+  border-bottom: none;
+  border-right: none;
   border-image-slice: 1;
   align-items: center;
   z-index: 1;
@@ -155,7 +159,8 @@
 }
 .calendar__time-slot {
   position: relative;
-  border: 1px solid black;
+  border-top: 1px solid #747474;
+  border-left: 1px solid #747474;
   min-width: 130px;
   height: 60px;
 }
@@ -187,6 +192,7 @@
   border-radius: 48px;
   border-radius: transparent;
   box-shadow: 0px 5px 3px -4px #474747;
+  color: #5f5f5f;
 }
 
 input,
@@ -194,6 +200,10 @@ textarea {
   outline: none;
   border: none;
   border: 1px solid #a3a5a7;
+}
+
+.modal__content {
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.3);
 }
 
 .event-form {
@@ -235,6 +245,12 @@ textarea {
 .event-form .form__time {
   display: flex;
 }
+.event-form .fa-chevron-left {
+  color: #5f5f5f;
+}
+.event-form .fa-chevron-right {
+  color: #5f5f5f;
+}
 .event-form .fa-clock {
   margin-top: 5px;
   margin-left: 5px;
@@ -267,7 +283,7 @@ textarea {
 
 body {
   font-size: 14px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #5f5f5f;
 }
 
