@@ -15,11 +15,7 @@ textarea {
     border: 1px solid rgb(163, 165, 167);
 }
 
-.modal__content {
-    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.3);
-}
-
-.event-form {
+.modal__content .event-form {
     display: flex;
     flex-direction: column;
     border: none;
@@ -29,7 +25,8 @@ textarea {
     }
     &__submit-btn {
         display: block;
-        background: rgb(45, 118, 212);
+        color: white;
+        background: $color-for-change;
         width: 120px;
         height: 35px;
         border-radius: 4px;
@@ -41,7 +38,7 @@ textarea {
     &__title {
         font-size: 20px;
         border: none;
-        border-bottom: darkblue 3px solid;
+        border-bottom: $color-for-change 3px solid;
         margin-left: 40px;
     }
     &__time {

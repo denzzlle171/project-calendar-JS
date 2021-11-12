@@ -44,6 +44,7 @@
   padding: 16px;
   border: 1px solid #ccc;
   border-radius: 8px;
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.3);
 }
 
 .create-event {
@@ -85,7 +86,7 @@
   background-color: transparent;
 }
 .popup .fa-trash {
-  color: #5f5f5f;
+  color: #6e6e6e;
   margin-right: 5px;
 }
 
@@ -97,9 +98,13 @@
   position: absolute;
   display: flex;
   width: 100%;
-  max-width: 910px;
-  padding: 20px 40px;
+  max-width: 980px;
+  padding: 20px 40px 15px 40px;
   margin: auto;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-image: linear-gradient(90deg, transparent 1%, #b1b1b1 5%, #b1b1b1 95%, transparent 100%);
+  border-image-slice: 1;
 }
 
 .navigation {
@@ -111,14 +116,15 @@
   width: 80px;
   border-radius: 4px;
   padding: 0px;
-  color: #5f5f5f;
+  color: #6e6e6e;
+  z-index: 3;
 }
 .navigation__displayed-month {
   margin-left: 30px;
 }
 
 .calendar {
-  margin-top: 70px;
+  margin-top: 71px;
   overflow-y: auto;
 }
 .calendar__header {
@@ -137,8 +143,7 @@
   border: none;
   border-width: 1px;
   border-style: solid;
-  border-image: linear-gradient(0deg, #747474 20%, transparent 30%);
-  border-bottom: none;
+  border-image: linear-gradient(0deg, #b1b1b1 20%, transparent 30%);
   border-right: none;
   border-image-slice: 1;
   align-items: center;
@@ -148,19 +153,20 @@
   display: flex;
 }
 .calendar__week-container {
-  margin-top: 60px;
   display: flex;
 }
 .calendar__time-scale {
+  margin-top: 60px;
   width: 70px;
 }
 .calendar__week {
+  margin-top: 60px;
   display: flex;
 }
 .calendar__time-slot {
   position: relative;
-  border-top: 1px solid #747474;
-  border-left: 1px solid #747474;
+  border-bottom: 1px solid #b1b1b1;
+  border-left: 1px solid #b1b1b1;
   min-width: 130px;
   height: 60px;
 }
@@ -177,14 +183,38 @@
   position: relative;
   width: 70px;
   height: 60px;
-  border-top-width: 1px;
-  border-top-style: solid;
-  border-image: linear-gradient(90deg, transparent 70%, black 100%);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-image: linear-gradient(90deg, transparent 70%, #b1b1b1 100%);
   border-image-slice: 1;
 }
 .time-slot__time {
+  font-size: 12px;
   position: relative;
   top: -8px;
+}
+
+.time-band {
+  display: flex;
+  position: absolute;
+  width: 70px;
+  height: 60px;
+  background-color: white;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-image: linear-gradient(90deg, transparent 20%, #b1b1b1 100%);
+  border-image-slice: 1;
+  z-index: 2;
+}
+.time-band__number {
+  display: inline;
+  margin-top: auto;
+  margin-bottom: 0px;
+  font-size: 12px;
+}
+
+.time-slot:first-child > :first-child {
+  display: none;
 }
 
 .create-event-btn {
@@ -192,7 +222,7 @@
   border-radius: 48px;
   border-radius: transparent;
   box-shadow: 0px 5px 3px -4px #474747;
-  color: #5f5f5f;
+  color: #6e6e6e;
 }
 
 input,
@@ -202,21 +232,18 @@ textarea {
   border: 1px solid #a3a5a7;
 }
 
-.modal__content {
-  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.3);
-}
-
-.event-form {
+.modal__content .event-form {
   display: flex;
   flex-direction: column;
   border: none;
 }
-.event-form__field {
+.modal__content .event-form__field {
   margin-bottom: 60px;
 }
-.event-form__submit-btn {
+.modal__content .event-form__submit-btn {
   display: block;
-  background: #2d76d4;
+  color: white;
+  background: #0280d4;
   width: 120px;
   height: 35px;
   border-radius: 4px;
@@ -224,42 +251,42 @@ textarea {
   margin-left: auto;
   margin-right: 0px;
 }
-.event-form__title {
+.modal__content .event-form__title {
   font-size: 20px;
   border: none;
-  border-bottom: darkblue 3px solid;
+  border-bottom: #0280d4 3px solid;
   margin-left: 40px;
 }
-.event-form__time {
+.modal__content .event-form__time {
   margin-left: 20px;
 }
-.event-form__description {
+.modal__content .event-form__description {
   border: none;
   resize: none;
   margin-left: 20px;
   width: 100%;
 }
-.event-form .form-description {
+.modal__content .event-form .form-description {
   display: flex;
 }
-.event-form .form__time {
+.modal__content .event-form .form__time {
   display: flex;
 }
-.event-form .fa-chevron-left {
-  color: #5f5f5f;
+.modal__content .event-form .fa-chevron-left {
+  color: #6e6e6e;
 }
-.event-form .fa-chevron-right {
-  color: #5f5f5f;
+.modal__content .event-form .fa-chevron-right {
+  color: #6e6e6e;
 }
-.event-form .fa-clock {
+.modal__content .event-form .fa-clock {
   margin-top: 5px;
   margin-left: 5px;
-  color: #5f5f5f;
+  color: #6e6e6e;
 }
-.event-form .fa-bars {
+.modal__content .event-form .fa-bars {
   margin-top: 3px;
   margin-left: 5px;
-  color: #5f5f5f;
+  color: #6e6e6e;
 }
 
 .event {
@@ -283,8 +310,8 @@ textarea {
 
 body {
   font-size: 14px;
-  font-family: 'Roboto', sans-serif;
-  color: #5f5f5f;
+  font-family: "Roboto", sans-serif;
+  color: #6e6e6e;
 }
 
 /*# sourceMappingURL=styles.css.map */

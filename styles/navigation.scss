@@ -4,9 +4,13 @@
     position: absolute;
     display: flex;
     width: 100%;
-    max-width: 910px;
-    padding: 20px 40px;
+    max-width: 980px;
+    padding: 20px 40px 15px 40px;
     margin: auto;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-image: linear-gradient(90deg, transparent 1%, $colore-grid 5%, $colore-grid 95%, transparent 100%);
+    border-image-slice: 1;
 }
 
 .navigation {
@@ -19,6 +23,7 @@
         border-radius: 4px;
         padding: 0px;
         color: $colore-icon-text;
+        z-index: 3;
     }
 
     &__displayed-month {

@@ -2,8 +2,9 @@
 // стили сетки календаря и заголовка календаря с днями недели
 
 .calendar {
-    margin-top: 70px;
+    margin-top: 71px;
     overflow-y: auto;
+
     &__header {
         display: flex;
         margin-left: 70px;
@@ -21,7 +22,7 @@
         border-width: 1px;
         border-style: solid;
         border-image: linear-gradient(0deg, $colore-grid 20%, transparent 30%);
-        border-bottom: none;
+
         border-right: none;
         border-image-slice: 1;
         align-items: center;
@@ -31,19 +32,20 @@
         display: flex;
     }
     &__week-container {
-        margin-top: 60px;
         display: flex;
     }
     &__time-scale {
+        margin-top: 60px;
         width: 70px;
     }
     &__week {
+        margin-top: 60px;
         display: flex;
-        // background-color: cadetblue;
     }
+
     &__time-slot {
         position: relative;
-        border-top: 1px solid $colore-grid;
+        border-bottom: 1px solid $colore-grid;
         border-left: 1px solid $colore-grid;
         min-width: 130px;
         height: 60px;

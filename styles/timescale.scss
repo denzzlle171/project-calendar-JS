@@ -1,16 +1,42 @@
+@import "varible.scss";
 // стили боковой временной шкалы
 
 .time-slot {
     position: relative;
     width: 70px;
     height: 60px;
-    border-top-width: 1px;
-    border-top-style: solid;
-    border-image: linear-gradient(90deg, transparent 70%, black 100%);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-image: linear-gradient(90deg, transparent 70%, $colore-grid 100%);
     border-image-slice: 1;
 
     &__time {
+        font-size: 12px;
         position: relative;
         top: -8px;
     }
+}
+
+.time-band {
+    display: flex;
+    position: absolute;
+    width: 70px;
+    height: 60px;
+    background-color: white;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-image: linear-gradient(90deg, transparent 20%, $colore-grid 100%);
+    border-image-slice: 1;
+    z-index: 2;
+
+    &__number {
+        display: inline;
+        margin-top: auto;
+        margin-bottom: 0px;
+        font-size: 12px;
+    }
+}
+
+.time-slot:first-child > :first-child {
+    display: none;
 }
