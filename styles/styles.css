@@ -172,10 +172,11 @@
 }
 .calendar .day-label__day-name {
   margin-top: 3px;
-  font-size: 14px;
+  font-size: 10px;
+  text-transform: uppercase;
 }
 .calendar .day-label__day-number {
-  font-size: 22px;
+  font-size: 18px;
   margin-top: 3px;
 }
 
@@ -189,7 +190,7 @@
   border-image-slice: 1;
 }
 .time-slot__time {
-  font-size: 12px;
+  font-size: 10px;
   position: relative;
   top: -8px;
 }
@@ -210,7 +211,7 @@
   display: inline;
   margin-top: auto;
   margin-bottom: 0px;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .time-slot:first-child > :first-child {
