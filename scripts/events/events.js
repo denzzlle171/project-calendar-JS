@@ -73,15 +73,12 @@ export const renderEvents = () => {
   // достаем из storage все события и дату понедельника отображаемой недели
   const beginWeekDay = getItem('displayedWeekStart');
   const endWeekDay = shmoment(getItem('displayedWeekStart'))
-    .add('days', 6)
+    .add('days', 7)
     .result();
   // фильтруем события, оставляем только те, что входят в текущую неделю
-  const arrCurentWeekEv = getItem('events').filter((element) => {
-    if (element.start >= beginWeekDay && element.start <= endWeekDay) {
-      return element;
-    }
-    return false;
-  });
+  const arrCurentWeekEv = getItem('events').filter(
+    (element) => element.start >= beginWeekDay && element.start < endWeekDay
+  );
 
   // создаем для них DOM элементы с помощью createEventElement
   const arrElemOfEv = arrCurentWeekEv.map((elem) => {
@@ -126,5 +123,4 @@ function onDeleteEvent() {
 }
 
 deleteEventBtn.addEventListener('click', onDeleteEvent);
-
 weekElem.addEventListener('click', handleEventClick);

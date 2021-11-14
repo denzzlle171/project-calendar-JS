@@ -10,17 +10,32 @@ export const renderHeader = () => {
   const daysCurentWeek = generateWeekRange(getItem('displayedWeekStart'));
   // на основе полученного массива сформируйте разметку в виде строки - 7 дней (день недели и число в месяце)
   const daysItem = daysCurentWeek.map(
-    (elem) => `<div class='calendar__day-label day-label'>
+    (elem) =>
+      `<div class='calendar__day-label day-label' data-data-week=${elem.toISOString()}>
 <span class = 'day-label__day-name'>${daysOfWeek[elem.getDay()]}</span>
 <span class = 'day-label__day-number'>${elem.getDate()}</span>
   </div>`
   );
   // полученную разметку вставить на страницу с помощью innerHTML в .calendar__header
   const headerWeek = document.querySelector('.calendar__header');
+
   const curentWeek = daysItem.toString().replace(/,/g, ' ');
   headerWeek.innerHTML = curentWeek;
   // в дата атрибуте каждой ячейки должно хранить для какого часа эта ячейка
-};
+  // при клике на кнопку "Create" открыть модальное окно с формой для создания события
+  // назначьте здесь обработчик
+  //---------------------------------------------------------
+  // for marker day of week
+  const allWeekDays = [...document.querySelectorAll('.calendar__day-label')];
+  allWeekDays.map((day) => {
+    const curentDayWeek = new Date(day.dataset.dataWeek).toDateString();
+    const dayMark = new Date().toDateString();
 
-// при клике на кнопку "Create" открыть модальное окно с формой для создания события
-// назначьте здесь обработчик
+    if (curentDayWeek === dayMark) {
+      day.classList.add('day-marker');
+      console.log(day);
+    }
+    return null;
+  });
+  //---------------------------------------------------------
+};

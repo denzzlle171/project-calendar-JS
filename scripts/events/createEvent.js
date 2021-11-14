@@ -21,7 +21,6 @@ function onCloseEventForm() {
 function onCreateEvent(event) {
   event.preventDefault();
   // задача этой ф-ции только добавить новое событие в массив событий, что хранится в storage
-  // создавать или менять DOM элементы здесь не нужно. Этим займутся другие ф-ции
   // при подтверждении формы нужно считать данные с формы
   // с формы вы получите поля date, startTime, endTime, title, description
   const title = eventFormElem.querySelector('[name = "title"]');

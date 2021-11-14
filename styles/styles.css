@@ -59,6 +59,9 @@
   background-color: transparent;
   font-size: 20px;
 }
+.create-event__close-btn:hover {
+  cursor: pointer;
+}
 .create-event__close-mod {
   display: block;
   transform: rotate(45deg);
@@ -77,21 +80,52 @@
   position: absolute;
   background: #fff;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid transparent;
   border-radius: 4px;
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.3);
 }
 .popup .delete-event-btn {
   margin-left: 3px;
   border: none;
   background-color: transparent;
 }
-.popup .fa-trash {
-  color: #6e6e6e;
-  margin-right: 5px;
-}
 
 .hidden {
   display: none;
+}
+
+.day-marker :first-child {
+  color: #0280d4;
+}
+.day-marker :last-child {
+  background-color: #0280d4;
+  border-radius: 50%;
+  color: white;
+}
+
+.fa-chevron-left {
+  color: #6e6e6e;
+}
+
+.fa-chevron-right {
+  color: #6e6e6e;
+}
+
+.fa-clock {
+  margin-top: 5px;
+  margin-left: 5px;
+  color: #6e6e6e;
+}
+
+.fa-bars {
+  margin-top: 3px;
+  margin-left: 5px;
+  color: #6e6e6e;
+}
+
+.fa-trash {
+  color: #6e6e6e;
+  margin-right: 5px;
 }
 
 .header {
@@ -171,13 +205,20 @@
   height: 60px;
 }
 .calendar .day-label__day-name {
+  margin: auto;
+  margin-bottom: 0;
   margin-top: 3px;
   font-size: 10px;
   text-transform: uppercase;
 }
 .calendar .day-label__day-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
   font-size: 18px;
-  margin-top: 3px;
+  margin: auto;
 }
 
 .time-slot {
@@ -230,7 +271,7 @@ input,
 textarea {
   outline: none;
   border: none;
-  border: 1px solid #a3a5a7;
+  border: 1px solid #b1b1b1;
 }
 
 .modal__content .event-form {
@@ -240,6 +281,9 @@ textarea {
 }
 .modal__content .event-form__field {
   margin-bottom: 60px;
+}
+.modal__content .event-form__field:hover {
+  cursor: pointer;
 }
 .modal__content .event-form__submit-btn {
   display: block;
@@ -251,6 +295,9 @@ textarea {
   border: none;
   margin-left: auto;
   margin-right: 0px;
+}
+.modal__content .event-form__submit-btn:hover {
+  cursor: pointer;
 }
 .modal__content .event-form__title {
   font-size: 20px;
@@ -272,22 +319,6 @@ textarea {
 }
 .modal__content .event-form .form__time {
   display: flex;
-}
-.modal__content .event-form .fa-chevron-left {
-  color: #6e6e6e;
-}
-.modal__content .event-form .fa-chevron-right {
-  color: #6e6e6e;
-}
-.modal__content .event-form .fa-clock {
-  margin-top: 5px;
-  margin-left: 5px;
-  color: #6e6e6e;
-}
-.modal__content .event-form .fa-bars {
-  margin-top: 3px;
-  margin-left: 5px;
-  color: #6e6e6e;
 }
 
 .event {

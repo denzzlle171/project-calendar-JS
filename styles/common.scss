@@ -22,6 +22,7 @@
 .fa-chevron-right {
     z-index: -1;
 }
+
 .modal {
     position: fixed;
     display: flex;
@@ -49,6 +50,9 @@
         border: none;
         background-color: transparent;
         font-size: 20px;
+        &:hover {
+            cursor: pointer;
+        }
     }
     &__close-mod {
         display: block;
@@ -62,7 +66,6 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    // background-color: #a8a8a8be;
     z-index: 2;
 }
 
@@ -71,20 +74,52 @@
         position: absolute;
         background: #fff;
         padding: 8px;
-        border: 1px solid #ccc;
+        border: 1px solid transparent;
         border-radius: 4px;
+        box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.3);
     }
     .delete-event-btn {
         margin-left: 3px;
         border: none;
         background-color: transparent;
     }
-    .fa-trash {
-        color: $colore-icon-text;
-        margin-right: 5px;
-    }
 }
 
 .hidden {
     display: none;
+}
+
+.day-marker {
+    :first-child {
+        color: $color-for-change;
+    }
+    :last-child {
+        background-color: $color-for-change;
+        border-radius: 50%;
+        color: white;
+    }
+}
+
+//icon
+.fa-chevron-left {
+    color: $colore-icon-text;
+}
+
+.fa-chevron-right {
+    color: $colore-icon-text;
+}
+
+.fa-clock {
+    margin-top: 5px;
+    margin-left: 5px;
+    color: $colore-icon-text;
+}
+.fa-bars {
+    margin-top: 3px;
+    margin-left: 5px;
+    color: $colore-icon-text;
+}
+.fa-trash {
+    color: $colore-icon-text;
+    margin-right: 5px;
 }

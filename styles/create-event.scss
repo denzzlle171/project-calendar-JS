@@ -12,7 +12,7 @@ input,
 textarea {
     outline: none;
     border: none;
-    border: 1px solid rgb(163, 165, 167);
+    border: 1px solid $colore-grid;
 }
 
 .modal__content .event-form {
@@ -22,6 +22,9 @@ textarea {
 
     &__field {
         margin-bottom: 60px;
+        &:hover {
+            cursor: pointer;
+        }
     }
     &__submit-btn {
         display: block;
@@ -31,9 +34,11 @@ textarea {
         height: 35px;
         border-radius: 4px;
         border: none;
-
         margin-left: auto;
         margin-right: 0px;
+        &:hover {
+            cursor: pointer;
+        }
     }
     &__title {
         font-size: 20px;
@@ -55,23 +60,5 @@ textarea {
     }
     .form__time {
         display: flex;
-    }
-
-    .fa-chevron-left {
-        color: $colore-icon-text;
-    }
-    .fa-chevron-right {
-        color: $colore-icon-text;
-    }
-
-    .fa-clock {
-        margin-top: 5px;
-        margin-left: 5px;
-        color: $colore-icon-text;
-    }
-    .fa-bars {
-        margin-top: 3px;
-        margin-left: 5px;
-        color: $colore-icon-text;
     }
 }
